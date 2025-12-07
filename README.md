@@ -23,7 +23,7 @@ This campaign is a collaborative project. By participating, you agree to adhere 
 * **Setting:** The wild, infinite frontier of the Planescape multiverse, accessed via portals centered in **Sigil, the City of Doors**.
 * **Style:** Player-driven, high-stakes exploration, and single-session adventures.
 * **Structure:** Multiple DMs, flexible party compositions, and low player commitment.
-* **History Engine:** A modified *[Microscope](http://itgs.pbworks.com/w/file/fetch/143444790/Microscope%20RPG.pdf)* TTRPG system ensures all participants have equal authority in establishing **Canon** (shared facts).
+* **History Engine:** A modified *Microscope* TTRPG system ensures all participants have equal authority in establishing **Canon** (shared facts).
 
 ---
 
