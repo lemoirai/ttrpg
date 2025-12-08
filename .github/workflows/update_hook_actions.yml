@@ -8,6 +8,8 @@ on:
 jobs:
   update-inputs:
     runs-on: ubuntu-latest
+    permissions:
+        contents: write
     env:
       DIR: "./Open_Hooks"
       WORKFLOW_FILE: .github/workflows/hook_close.yml
