@@ -40,7 +40,7 @@ jobs:
           TEMPLATE_NAME="${{ github.event.inputs.hook_template }}"
           NEW_FILENAME="$(basename -s .md ${TEMPLATE_NAME} )-Completed.md"
           echo 'TEMPLATE_NAME="${TEMPLATE_NAME}"' >> $GITHUB_ENV
-          echo 'NEW_FILENAME=${NEW_FILENAME}"' >> $GITHUB_ENV
+          echo 'NEW_FILENAME="${NEW_FILENAME}"' >> $GITHUB_ENV
 
           # to stdout
           echo "NEW_FILENAME=${NEW_FILENAME}" >> $GITHUB_OUTPUT'
