@@ -15,7 +15,7 @@ on:
           Paste the **completed** content for your Hook here.
           (Copy the selected template, edit it offline, and paste the final result here.)
         required: true
-        type: textarea
+        type: string
       title:
         description: 'Title for the new Pull Request (e.g., Completed Hook: The Mechanus Manor)'
         required: true
