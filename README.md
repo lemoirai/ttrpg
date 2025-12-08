@@ -2,6 +2,11 @@
 
 Welcome to the **Planescape West Marches** campaign! This document serves as the single source of truth for our shared world, history, and structural rules, regardless of where this information is stored.
 
+
+
+[Image of book.png]
+(https://github.com/lemoirai/ttrpg/tree/main/png/book.png)
+
 ---
 
 ## Terms of Service (Table of Contents)
@@ -16,6 +21,8 @@ This campaign is a collaborative project. By participating, you agree to adhere 
 * [**6. Campaign History Timeline**](#6-campaign-history-timeline)
 * [**7. Example Adventure Log Format**](#7-example-adventure-log-format)
 
+(https://github.com/lemoirai/ttrpg/tree/main/png/portal.png)
+
 ---
 
 ## 1. Campaign Overview
@@ -24,6 +31,8 @@ This campaign is a collaborative project. By participating, you agree to adhere 
 * **Style:** Player-driven, high-stakes exploration, and single-session adventures.
 * **Structure:** Multiple DMs, flexible party compositions, and low player commitment.
 * **History Engine:** A modified *Microscope* TTRPG system ensures all participants have equal authority in establishing **Canon** (shared facts).
+
+(https://github.com/lemoirai/ttrpg/tree/main/png/swords.png)
 
 ---
 
@@ -37,6 +46,11 @@ Canonical Blocks are the definitive units of information for our campaign. They 
 | **Canonical Event** | Specific, resolved incidents from the past. **Fact.** | **History: Events** (`Canonical_Blocks/History/Events.md`) |
 | **Open Question/Hook** | Specific, unresolved mystery that **must be answered by an adventure**. | **Active Hooks** (`Open_Hooks/`) |
 | **Canonical Rule** | Defines a campaign mechanic, premise, or constraint. | **Rules & Palette** (`Canonical_Blocks/Rules/`) |
+
+
+
+[Image of table.png]
+(https://github.com/lemoirai/ttrpg/tree/main/png/table.png)
 
 ---
 
@@ -52,6 +66,8 @@ Session Zero is run without a GM, using the **Architect** role to collaborativel
 
 The goal is to generate a robust timeline and several starting **Open Question/Hooks** for the campaign to begin.
 
+(https://github.com/lemoirai/ttrpg/tree/main/png/colab.png)
+
 ---
 
 ## 4. Post-Adventure Flow (Ratifying Results)
@@ -65,6 +81,8 @@ This process defines how D&D adventures resolve **Open Questions** and create ne
     * The original **Open Question/Hook** document is moved to the **Closed Hooks Archive** (`Closed_Hooks/`).
     * The **Canonical Event** described in the log is officially added to the **History: Events** list.
 5.  **New Hooks Emerge:** Any **New Open Question/Hook** proposed in the log is added to the **Active Hooks** list.
+
+(https://github.com/lemoirai/ttrpg/tree/main/png/flow.png)
 
 ---
 
@@ -81,11 +99,21 @@ The following categories of information are stored in the GitHub repo:
 | **Adventure Logs** | `Adventures/` |
 | **Closed Hooks Archive** | `Closed_Hooks/` |
 
+
+
+[Image of scroll.png]
+(https://github.com/lemoirai/ttrpg/tree/main/png/scroll.png)
+
 ---
 
 ## 6. Campaign History Timeline
 
 This timeline will be updated continuously as adventures resolve **Open Questions** and create **Canonical Events**.
+
+
+
+[Image of timeline.png]
+(https://github.com/lemoirai/ttrpg/tree/main/png/timeline.png)
 
 ```mermaid
 timeline
