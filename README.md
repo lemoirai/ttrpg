@@ -8,13 +8,13 @@ Welcome to the **Planescape West Marches** campaign! This document serves as the
 
 This campaign is a collaborative project. By participating, you agree to adhere to the rules and structures defined in the sections below.
 
-* [Campaign Overview](#campaign-overview)
-* [The Canonical Blocks (The Data)](#the-canonical-blocks-the-data)
-* [Session Zero Cycle (Establishing Canon)](#session-zero-cycle-establishing-canon)
-* [Post-Adventure Flow (Ratifying Results)](#post-adventure-flow-ratifying-results)
-* [Required Documents and Categories](#required-documents-and-categories)
-* [Campaign History Timeline](#campaign-history-timeline)
-* [Example Adventure Log Format](#example-adventure-log-format)
+* [Campaign Overview](#-campaign-overview)
+* [The Canonical Blocks (The Data)](#-the-canonical-blocks-the-data)
+* [Session Zero Cycle (Establishing Canon)](#-session-zero-cycle-establishing-canon)
+* [Post-Adventure Flow (Ratifying Results)](#-post-adventure-flow-ratifying-results)
+* [Required Documents and Categories](#-required-documents-and-categories)
+* [Campaign History Timeline](#-campaign-history-timeline)
+* [Example Adventure Log Format](#-example-adventure-log-format)
 
 ---
 
