@@ -70,7 +70,7 @@ This process defines how D&D adventures resolve **Open Questions** and create ne
 
 ---
 
-## <img src="png/flow.png" alt="" width="50px"> Required Documents and Categories
+## <img src="png/structure.png" alt="" width="50px"> Required Documents and Categories
 
 The following categories of information are stored in the GitHub repo:
 
@@ -85,7 +85,7 @@ The following categories of information are stored in the GitHub repo:
 
 ---
 
-## <img src="png/scroll.png" alt="" width="50px"> Campaign History Timeline
+## <img src="png/timeline.png" alt="" width="50px"> Campaign History Timeline
 
 This timeline will be updated continuously as adventures resolve **Open Questions** and create **Canonical Events**.
 
