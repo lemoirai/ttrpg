@@ -1,0 +1,119 @@
+name: Canon Enforcer & Documentation Update
+
+on:
+  pull_request:
+    # Trigger on PR creation, updates, and synchronization
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+
+jobs:
+  validate_pr:
+    name: 1. Validate Campaign Canon Structure
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code (full history for file comparison)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get list of changed files
+        id: files
+        # A robust action to get all added, modified, and removed files
+        uses: tj-actions/changed-files@v44
+
+      # --- REQUIREMENT 2 & 3: Hook lists and PR template/structure enforcement ---
+      - name: Enforce Adventure Log Submission Structure
+        # This step ensures that when an Adventure Log is added, it correctly manages the Hooks.
+        # Rule enforced: Adding a file to 'Adventures/' MUST correspond to resolving one Open Hook (moving it to Closed_Hooks/).
+        id: validate_adventure_and_hooks
+        run: |
+          # Identify new Adventure Logs added in this PR
+          NEW_ADVENTURES=$(echo "${{ steps.files.outputs.added_files }}" | grep "^Adventures/.*\.md")
+          
+          if [ -n "$NEW_ADVENTURES" ]; then
+            echo "New Adventure Log(s) detected. Validating required Canon updates..."
+            
+            # Count file movements that resolve the Open Hook
+            # Assumption: An Open Hook is resolved by REMOVING it from Open_Hooks/ AND ADDING it to Closed_Hooks/
+            
+            # Check for the addition of the 'Closed Hook Archive' file (the 'next section')
+            CLOSED_HOOKS_ADDED=$(echo "${{ steps.files.outputs.added_files }}" | grep -c "^Closed_Hooks/.*\.md")
+            
+            # Check for the removal of the 'Active Hook' file
+            OPEN_HOOKS_REMOVED=$(echo "${{ steps.files.outputs.removed_files }}" | grep -c "^Open_Hooks/.*\.md")
+
+            if [ "$CLOSED_HOOKS_ADDED" -lt 1 ] || [ "$OPEN_HOOKS_REMOVED" -lt 1 ]; then
+              echo "::error title=Adventure Log Failed Validation::"
+              echo "An Adventure Log submission must perform a **Hook Closure**."
+              echo "Please ensure the PR includes a file that is **REMOVED** from 'Open_Hooks/' and **ADDED** to 'Closed_Hooks/'."
+              echo "Files Added to Closed_Hooks/: $CLOSED_HOOKS_ADDED. Files Removed from Open_Hooks/: $OPEN_HOOKS_REMOVED."
+              exit 1
+            fi
+            
+            # Optional check to ensure a Canonical Event was updated
+            EVENT_MODIFIED=$(echo "${{ steps.files.outputs.modified_files }}" | grep -c "Canonical_Blocks/History/Events.md")
+            if [ "$EVENT_MODIFIED" -lt 1 ]; then
+               echo "::warning title=Missing Event Update::An Adventure Log submission should typically update 'Canonical_Blocks/History/Events.md' to formalize the new canon."
+            fi
+            
+            echo "Adventure Log and Hook closure validated successfully."
+          fi
+          
+  update_docs:
+    name: 2. Update Documentation (Timeline)
+    runs-on: ubuntu-latest
+    # Only run if the validation job succeeded
+    needs: validate_pr
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          # Use the GITHUB_TOKEN to allow pushing back to the PR branch
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          
+      - name: Check for Canonical History Changes
+        id: check_canon
+        uses: tj-actions/changed-files@v44
+        with:
+          # Only proceed if the files that feed the timeline were modified
+          files: |
+            Canonical_Blocks/History/Events.md
+            Canonical_Blocks/History/Eras.md
+
+      - name: Skip if no Canon changed
+        if: steps.check_canon.outputs.files_changed == 'false'
+        run: echo "No canonical events or eras were modified. Skipping timeline update."
+        
+      - name: Setup Python
+        if: steps.check_canon.outputs.files_changed == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      # --- REQUIREMENT 1: Timeline on main readme.md update ---
+      - name: Generate new README.md Timeline
+        if: steps.check_canon.outputs.files_changed == 'true'
+        run: |
+          # *** ACTION REQUIRED: The repository needs a script to handle this. ***
+          # This step assumes a script (e.g., in 'scripts/generate_timeline.py') reads the 
+          # Canonical_Blocks/ files, reconstructs the Mermaid timeline markdown block, 
+          # and replaces the content within the 'Campaign History Timeline' section of README.md.
+          
+          # Replace this line with the command to run your timeline generation script
+          echo "Running timeline generation script..."
+          # Example Placeholder: python scripts/generate_timeline.py
+          
+          # FOR DEMO: Simulate a change to ensure the auto-commit step runs
+          echo "" >> README.md
+          
+      - name: Commit and Push Updated README
+        if: steps.check_canon.outputs.files_changed == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs: Automated timeline update for PR #${{ github.event.pull_request.number }}"
+          # Push the changes back to the PR branch for review/merge
+          branch: ${{ github.event.pull_request.head.ref }}
+          files: README.md
