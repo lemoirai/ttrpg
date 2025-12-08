@@ -1,0 +1,97 @@
+name: 🪝 Submit TTRPG Hook
+
+on:
+  workflow_dispatch:
+    inputs:
+      hook_template:
+        description: 'Select the Hook Template to complete (from Open_Hooks/)'
+        required: true
+        type: choice
+        # NOTE: This list must be manually updated whenever a new file is added to Open_Hooks/
+        options:
+          - 'OH-02-The-Mechanus-Manor.md' # Based on your current repository structure
+      completed_hook_content:
+        description: |
+          Paste the **completed** content for your Hook here.
+          (Copy the selected template, edit it offline, and paste the final result here.)
+        required: true
+        type: textarea
+      title:
+        description: 'Title for the new Pull Request (e.g., Completed Hook: The Mechanus Manor)'
+        required: true
+        type: string
+
+jobs:
+  submit_hook:
+    name: Process and Submit Hook
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed for git operations
+      pull-requests: write # Needed to create the PR
+    steps:
+      - name: ⬇️ Checkout Repository
+        uses: actions/checkout@v4
+        # Fetch branch history for clean push
+        with:
+          fetch-depth: 0 
+
+      - name: 📝 Determine New Hook Filename
+        id: filename
+        run: |
+          # The new file will be named based on the template, e.g., changing 'Open_' to 'Closed_' or 'Completed_'
+          TEMPLATE_NAME="${{ github.event.inputs.hook_template }}"
+          NEW_FILENAME="${TEMPLATE_NAME/OH-02/OH-02-Completed_}" # Example: OH-02-The-Mechanus-Manor.md -> OH-02-Completed_The-Mechanus-Manor.md
+          
+          echo "NEW_FILENAME=${NEW_FILENAME}" >> $GITHUB_OUTPUT
+          
+      - name: 💾 Create Completed Hook File
+        # Write the user's submitted content (the completed hook) to the new file
+        run: |
+          echo "${{ github.event.inputs.completed_hook_content }}" > ${{ steps.filename.outputs.NEW_FILENAME }}
+        shell: bash
+
+      - name: ⚙️ Setup GitHub CLI
+        uses: cli/gh-cli-action@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: 🌳 Create New Branch, Commit, and Push
+        run: |
+          BRANCH_NAME="feature/hook-submission-${{ github.run_id }}"
+          
+          # Configure git
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          
+          # Create and switch to new branch
+          git checkout -b $BRANCH_NAME
+          
+          # Move the newly created file into the destination directory (Closed_Hooks)
+          mv ${{ steps.filename.outputs.NEW_FILENAME }} Closed_Hooks/
+          
+          # Stage, Commit, and Push
+          git add Closed_Hooks/${{ steps.filename.outputs.NEW_FILENAME }}
+          git commit -m "feat: Completed hook: ${{ github.event.inputs.hook_template }}"
+          git push origin $BRANCH_NAME
+        shell: bash
+
+      - name: 🚀 Create Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_TITLE: ${{ github.event.inputs.title }}
+          PR_BODY: |
+            ## New Hook Submission
+            
+            This Pull Request contains the completed TTRPG Hook based on the **${{ github.event.inputs.hook_template }}** template.
+            
+            * **Template Used:** `${{ github.event.inputs.hook_template }}`
+            * **Submitted by:** @${{ github.event.sender.login }}
+            * **Destination File:** `Closed_Hooks/${{ steps.filename.outputs.NEW_FILENAME }}`
+            
+            Please review the content for canon compliance and structure before merging.
+        run: |
+          gh pr create \
+            --title "$PR_TITLE" \
+            --body "$PR_BODY" \
+            --base main \
+            --head feature/hook-submission-${{ github.run_id }}
