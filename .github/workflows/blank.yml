@@ -45,10 +45,6 @@ jobs:
         run: |
           echo "${{ github.event.inputs.completed_hook_content }}" > ${{ steps.filename.outputs.NEW_FILENAME }}
         shell: bash
-
-      - name: ⚙️ Setup GitHub CLI
-        # 🟢 CORRECTED ACTION NAME HERE
-        uses: cli/cli/setup-gh@v2
         
       - name: 🌳 Create New Branch, Commit, and Push
         run: |
