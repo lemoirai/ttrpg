@@ -1,4 +1,4 @@
-name: 🪝 Submit TTRPG Hook
+name: 🪝 Close TTRPG Hook
 
 on:
   workflow_dispatch:
@@ -38,24 +38,20 @@ jobs:
         id: filename
         run: |
           TEMPLATE_NAME="${{ github.event.inputs.hook_template }}"
-          NEW_FILENAME="${TEMPLATE_NAME/OH-02/OH-02-Completed_}"
+          NEW_FILENAME="${basename -s .md $TEMPLATE_NAME }-Completed.md"
           echo "NEW_FILENAME=${NEW_FILENAME}" >> $GITHUB_OUTPUT
           
       - name: 💾 Create Completed Hook File
         run: |
-          echo "${{ github.event.inputs.completed_hook_content }}" > ${{ steps.filename.outputs.NEW_FILENAME }}
+          echo "${{ github.event.inputs.completed_hook_content }}" > Open_Hooks/${TEMPLATE_NAME}
+          mv Open_Hooks/${TEMPLATE_NAME} Closed_Hooks/${{ steps.filename.outputs.NEW_FILENAME }}
         shell: bash
         
       - name: 🌳 Create New Branch, Commit, and Push
         run: |
           BRANCH_NAME="feature/hook-submission-${{ github.run_id }}"
           
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          
           git checkout -b $BRANCH_NAME
-          
-          mv ${{ steps.filename.outputs.NEW_FILENAME }} Closed_Hooks/
           
           git add Closed_Hooks/${{ steps.filename.outputs.NEW_FILENAME }}
           git commit -m "feat: Completed hook: ${{ github.event.inputs.hook_template }}"
