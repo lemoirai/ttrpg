@@ -4,8 +4,7 @@ Welcome to the **Planescape West Marches** campaign! This document serves as the
 
 
 
-[Image of book.png]
-(https://github.com/lemoirai/ttrpg/tree/main/png/book.png)
+![Image of book.png](png/book.png)
 
 ---
 
