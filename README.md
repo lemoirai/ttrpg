@@ -20,7 +20,7 @@ This campaign is a collaborative project. By participating, you agree to adhere 
 * [**6. Campaign History Timeline**](#6-campaign-history-timeline)
 * [**7. Example Adventure Log Format**](#7-example-adventure-log-format)
 
-(https://github.com/lemoirai/ttrpg/tree/main/png/portal.png)
+![portal](png/portal.png)
 
 ---
 
@@ -31,7 +31,7 @@ This campaign is a collaborative project. By participating, you agree to adhere 
 * **Structure:** Multiple DMs, flexible party compositions, and low player commitment.
 * **History Engine:** A modified *Microscope* TTRPG system ensures all participants have equal authority in establishing **Canon** (shared facts).
 
-(https://github.com/lemoirai/ttrpg/tree/main/png/swords.png)
+![swords](png/swords.png)
 
 ---
 
@@ -46,10 +46,7 @@ Canonical Blocks are the definitive units of information for our campaign. They 
 | **Open Question/Hook** | Specific, unresolved mystery that **must be answered by an adventure**. | **Active Hooks** (`Open_Hooks/`) |
 | **Canonical Rule** | Defines a campaign mechanic, premise, or constraint. | **Rules & Palette** (`Canonical_Blocks/Rules/`) |
 
-
-
-[Image of table.png]
-(https://github.com/lemoirai/ttrpg/tree/main/png/table.png)
+![Image of table.png](png/table.png)
 
 ---
 
@@ -65,7 +62,7 @@ Session Zero is run without a GM, using the **Architect** role to collaborativel
 
 The goal is to generate a robust timeline and several starting **Open Question/Hooks** for the campaign to begin.
 
-(https://github.com/lemoirai/ttrpg/tree/main/png/colab.png)
+![collab](png/colab.png)
 
 ---
 
@@ -81,7 +78,7 @@ This process defines how D&D adventures resolve **Open Questions** and create ne
     * The **Canonical Event** described in the log is officially added to the **History: Events** list.
 5.  **New Hooks Emerge:** Any **New Open Question/Hook** proposed in the log is added to the **Active Hooks** list.
 
-(https://github.com/lemoirai/ttrpg/tree/main/png/flow.png)
+![flow](png/flow.png)
 
 ---
 
@@ -98,10 +95,7 @@ The following categories of information are stored in the GitHub repo:
 | **Adventure Logs** | `Adventures/` |
 | **Closed Hooks Archive** | `Closed_Hooks/` |
 
-
-
-[Image of scroll.png]
-(https://github.com/lemoirai/ttrpg/tree/main/png/scroll.png)
+![Image of scroll.png](png/scroll.png)
 
 ---
 
@@ -109,10 +103,7 @@ The following categories of information are stored in the GitHub repo:
 
 This timeline will be updated continuously as adventures resolve **Open Questions** and create **Canonical Events**.
 
-
-
-[Image of timeline.png]
-(https://github.com/lemoirai/ttrpg/tree/main/png/timeline.png)
+![Image of timeline.png](png/timeline.png)
 
 ```mermaid
 timeline
