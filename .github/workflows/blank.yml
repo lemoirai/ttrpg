@@ -77,7 +77,7 @@ jobs:
 
       - name: 🚀 Create Pull Request
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.secrets.GITHUB_TOKEN }}
           PR_TITLE: ${{ github.event.inputs.title }}
           PR_BODY: |
             ## New Hook Submission
