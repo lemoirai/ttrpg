@@ -43,7 +43,7 @@ jobs:
           echo 'NEW_FILENAME="${NEW_FILENAME}"' >> $GITHUB_ENV
 
           # to stdout
-          echo "NEW_FILENAME=${NEW_FILENAME}" >> $GITHUB_OUTPUT'
+          echo "NEW_FILENAME=${NEW_FILENAME}" >> $GITHUB_OUTPUT
           
       - name: 💾 Create Completed Hook File
         run: |
