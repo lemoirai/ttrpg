@@ -1,0 +1,69 @@
+name: Update File List in Workflow Dispatch Inputs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-inputs:
+    runs-on: ubuntu-latest
+    env:
+      DIR: "./Open_Hooks"
+      WORKFLOW_FILE: .github/workflows/hook_close.yml
+      INPUT_NAME: "hook_template"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install yq
+        uses: mikefarah/yq@4.44.1
+
+      - name: List files in directory
+        id: filelist
+        run: |
+          cd "$DIR"
+          ls -1 | sort > /tmp/new_files.txt
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          cat /tmp/new_files.txt >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Create yq options array
+        id: options
+        run: |
+          yq -o=json -I=0 '.' /tmp/new_files.txt > /tmp/options.json
+
+      - name: Compare and update workflow file input options
+        id: update
+        run: |
+          set -e
+          wf="$WORKFLOW_FILE"
+          input="$INPUT_NAME"
+          new_opts=$(cat /tmp/options.json)
+          current_opts=$(yq '.on.workflow_dispatch.inputs["'${input}'"].options' $wf 2>/dev/null || echo '[]')
+          
+          # Compare the new options array to existing
+          if [ "$new_opts" = "$current_opts" ]; then
+            echo "No changes needed." > /tmp/nochange
+            exit 0
+          fi
+
+          # Update the workflow file with new options
+          yq -i '
+            .on.workflow_dispatch.inputs["'"${input}"'"].options = load("/tmp/options.json")
+          ' "$wf"
+      - name: Check if update was needed
+        id: check-update
+        run: |
+          if [ -f /tmp/nochange ]; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        if: steps.check-update.outputs.changed == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "[bot] Update workflow input choices for ${{ env.INPUT_NAME }}"
+          branch: main
