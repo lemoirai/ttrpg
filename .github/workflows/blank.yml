@@ -37,9 +37,7 @@ jobs:
       - name: 📝 Determine New Hook Filename
         id: filename
         run: |
-          TEMPLATE_NAME="${{ github.event.inputs.hook_template }}"
           NEW_FILENAME="$(basename -s .md ${TEMPLATE_NAME} )-Completed.md"
-          echo 'TEMPLATE_NAME="${TEMPLATE_NAME}"' >> $GITHUB_ENV
           echo 'NEW_FILENAME="${NEW_FILENAME}"' >> $GITHUB_ENV
 
           # to stdout
@@ -47,8 +45,8 @@ jobs:
           
       - name: 💾 Create Completed Hook File
         run: |
-          echo "${{ github.event.inputs.completed_hook_content }}" > Open_Hooks/${TEMPLATE_NAME}
-          mv Open_Hooks/${TEMPLATE_NAME} Closed_Hooks/${{ steps.filename.outputs.NEW_FILENAME }}
+          echo "${{ github.event.inputs.completed_hook_content }}" >> Open_Hooks/${{ github.event.inputs.hook_template }}
+          mv Open_Hooks/${{ github.event.inputs.hook_template }} Closed_Hooks/${{ steps.filename.outputs.NEW_FILENAME }}
         shell: bash
         
       - name: 🌳 Create New Branch, Commit, and Push
