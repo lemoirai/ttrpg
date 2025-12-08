@@ -2,40 +2,34 @@
 
 Welcome to the **Planescape West Marches** campaign! This document serves as the single source of truth for our shared world, history, and structural rules, regardless of where this information is stored.
 
-
-
-![Image of book.png](png/book.png)
-
 ---
 
-## Terms of Service (Table of Contents)
+## <img src="png/book.png" alt="" width="50px"> Terms of Service (Table of Contents)
 
 This campaign is a collaborative project. By participating, you agree to adhere to the rules and structures defined in the sections below.
 
-* [**1. Campaign Overview**](#1-campaign-overview)
-* [**2. The Canonical Blocks (The Data)**](#2-the-canonical-blocks-the-data)
-* [**3. Session Zero Cycle (Establishing Canon)**](#3-session-zero-cycle-establishing-canon)
-* [**4. Post-Adventure Flow (Ratifying Results)**](#4-post-adventure-flow-ratifying-results)
-* [**5. Required Documents and Categories**](#5-required-documents-and-categories)
-* [**6. Campaign History Timeline**](#6-campaign-history-timeline)
-* [**7. Example Adventure Log Format**](#7-example-adventure-log-format)
-
-![portal](png/portal.png)
+* [Campaign Overview**](#1-campaign-overview)
+* [The Canonical Blocks (The Data)**](#2-the-canonical-blocks-the-data)
+* [Session Zero Cycle (Establishing Canon)**](#3-session-zero-cycle-establishing-canon)
+* [Post-Adventure Flow (Ratifying Results)**](#4-post-adventure-flow-ratifying-results)
+* [Required Documents and Categories**](#5-required-documents-and-categories)
+* [Campaign History Timeline**](#6-campaign-history-timeline)
+* [Example Adventure Log Format**](#7-example-adventure-log-format)
 
 ---
 
-## 1. Campaign Overview
+## <img src="png/portal.png" alt="" width="50px"> Campaign Overview 
 
 * **Setting:** The wild, infinite frontier of the Planescape multiverse, accessed via portals centered in **Sigil, the City of Doors**.
 * **Style:** Player-driven, high-stakes exploration, and single-session adventures.
 * **Structure:** Multiple DMs, flexible party compositions, and low player commitment.
 * **History Engine:** A modified *Microscope* TTRPG system ensures all participants have equal authority in establishing **Canon** (shared facts).
 
-![swords](png/swords.png)
-
 ---
 
-## 2. The Canonical Blocks (The Data)
+## <img src="png/swords.png" alt="" width="50px"> The Canonical Blocks (The Data)
+
+
 
 Canonical Blocks are the definitive units of information for our campaign. They must be stored in the **Shared Canon Archive**.
 
@@ -46,11 +40,9 @@ Canonical Blocks are the definitive units of information for our campaign. They 
 | **Open Question/Hook** | Specific, unresolved mystery that **must be answered by an adventure**. | **Active Hooks** (`Open_Hooks/`) |
 | **Canonical Rule** | Defines a campaign mechanic, premise, or constraint. | **Rules & Palette** (`Canonical_Blocks/Rules/`) |
 
-![Image of table.png](png/table.png)
-
 ---
 
-## 3. Session Zero Cycle (Establishing Canon)
+## <img src="png/table.png" alt="" width="50px"> Session Zero Cycle (Establishing Canon)
 
 Session Zero is run without a GM, using the **Architect** role to collaboratively define the world and rules.
 
@@ -62,11 +54,9 @@ Session Zero is run without a GM, using the **Architect** role to collaborativel
 
 The goal is to generate a robust timeline and several starting **Open Question/Hooks** for the campaign to begin.
 
-![collab](png/colab.png)
-
 ---
 
-## 4. Post-Adventure Flow (Ratifying Results)
+## <img src="png/colab.png" alt="" width="50px"> Post-Adventure Flow (Ratifying Results)
 
 This process defines how D&D adventures resolve **Open Questions** and create new **Canonical Events**.
 
@@ -78,11 +68,9 @@ This process defines how D&D adventures resolve **Open Questions** and create ne
     * The **Canonical Event** described in the log is officially added to the **History: Events** list.
 5.  **New Hooks Emerge:** Any **New Open Question/Hook** proposed in the log is added to the **Active Hooks** list.
 
-![flow](png/flow.png)
-
 ---
 
-## 5. Required Documents and Categories
+## <img src="png/flow.png" alt="" width="50px"> Required Documents and Categories
 
 The following categories of information are stored in the GitHub repo:
 
@@ -95,15 +83,11 @@ The following categories of information are stored in the GitHub repo:
 | **Adventure Logs** | `Adventures/` |
 | **Closed Hooks Archive** | `Closed_Hooks/` |
 
-![Image of scroll.png](png/scroll.png)
-
 ---
 
-## 6. Campaign History Timeline
+## <img src="png/scroll.png" alt="" width="50px"> Campaign History Timeline
 
 This timeline will be updated continuously as adventures resolve **Open Questions** and create **Canonical Events**.
-
-![Image of timeline.png](png/timeline.png)
 
 ```mermaid
 timeline
