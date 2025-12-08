@@ -14,7 +14,6 @@ This campaign is a collaborative project. By participating, you agree to adhere 
 * [Post-Adventure Flow (Ratifying Results)](#-post-adventure-flow-ratifying-results)
 * [Required Documents and Categories](#-required-documents-and-categories)
 * [Campaign History Timeline](#-campaign-history-timeline)
-* [Example Adventure Log Format](#-example-adventure-log-format)
 
 ---
 
