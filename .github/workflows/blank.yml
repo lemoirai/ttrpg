@@ -38,7 +38,7 @@ jobs:
         id: filename
         run: |
           TEMPLATE_NAME="${{ github.event.inputs.hook_template }}"
-          NEW_FILENAME="${basename -s .md $TEMPLATE_NAME }-Completed.md"
+          NEW_FILENAME="$(basename -s .md ${TEMPLATE_NAME} )-Completed.md"
           echo "NEW_FILENAME=${NEW_FILENAME}" >> $GITHUB_OUTPUT
           
       - name: 💾 Create Completed Hook File
