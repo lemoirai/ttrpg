@@ -1,0 +1,76 @@
+name: "🪝 Create TTRPG Hook"
+on:
+  workflow_dispatch:
+    inputs:
+      new_hook_filename:
+        description: 'Select a name for the new Hook'
+        required: true
+        type: string
+      oh_title:
+        description: 'Title for the new hook + Pull Request (e.g., Completed Hook: The Mechanus Manor)'
+        required: true
+        type: string
+      oh_questions:
+        description: 'Questions to be resolved (markdown)'
+        required: true
+        type: string
+      oh_context:
+        description: "Context / Starting Point"
+        required: true
+        type: string
+      oh_goals:
+        description: "Potential Adventure Goals"
+        required: true
+        type: string
+jobs:
+  submit_hook:
+    name: Process and Submit new Hook
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed for git operations
+      pull-requests: write # Needed to create the PR
+    steps:
+      - name: ⬇️ Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: "💾 Create Completed Hook File"
+        run: |
+          echo "# Open Question/Hook: OH-#\n${{ github.event.inputs.oh_title}}\n" >> Open_Hooks/${{ github.event.inputs.new_hook_filename}}
+          echo "**Question to be Resolved:\n${{ github.event.inputs.oh_questions}}\n" >> Open_Hooks/${{ github.event.inputs.new_hook_filename}}
+          echo "**Context/Starting Point:\n${{ github.event.inputs.oh_context}}\n" >> Open_Hooks/${{ github.event.inputs.new_hook_filename}}
+          echo "**Potential Adventure Goal:\n${{ github.event.inputs.oh_goals}}\n" >> Open_Hooks/${{ github.event.inputs.new_hook_filename}}
+        shell: bash
+      - name: "🌳 Create New Branch, Commit, and Push"
+        run: |
+          BRANCH_NAME="feature/hook-submission-${{ github.run_id }}"
+
+          git checkout -b $BRANCH_NAME
+
+          git config --global user.email "gitbot@github.com"
+          git config --global user.name "Github Bot via Actions"
+
+          git add Closed_Hooks/${{ steps.filename.outputs.NEW_FILENAME }}
+          git commit -m "feat: Completed hook: ${{ github.event.inputs.new_hook_filename }}"
+          git push origin $BRANCH_NAME
+        shell: bash
+      - name: "🚀 Create Pull Request"
+        env:
+          # 🟢 CORRECTED SECRET REFERENCE HERE
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_TITLE: ${{ github.event.inputs.title }}
+          PR_BODY: |
+            ## New Hook Submission
+
+            This Pull Request contains the completed TTRPG Hook based on the **${{ github.event.inputs.new_hook_filename }}** template.
+
+            * **New filename:** `${{ github.event.inputs.new_hook_filename }}`
+            * **Submitted by:** @${{ github.event.sender.login }}
+
+            Please review the content for canon compliance and structure before merging.
+        run: |
+          gh pr create \
+            --title "$PR_TITLE" \
+            --body "$PR_BODY" \
+            --base main \
+            --head feature/hook-submission-${{ github.run_id }}
