@@ -37,7 +37,7 @@ jobs:
       - name: 📝 Determine New Hook Filename
         id: filename
         run: |
-          NEW_FILENAME="$(basename -s .md ${TEMPLATE_NAME} )-Completed.md"
+          NEW_FILENAME="$(basename -s .md ${{ github.event.inputs.hook_template }} )-Completed.md"
           echo 'NEW_FILENAME="${NEW_FILENAME}"' >> $GITHUB_ENV
 
           # to stdout
