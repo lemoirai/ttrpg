@@ -56,6 +56,9 @@ jobs:
           BRANCH_NAME="feature/hook-submission-${{ github.run_id }}"
           
           git checkout -b $BRANCH_NAME
+
+          git config --global user.email "gitbot@github.com"
+          git config --global user.name "Github Bot via Actions"
           
           git add Closed_Hooks/${{ steps.filename.outputs.NEW_FILENAME }}
           git commit -m "feat: Completed hook: ${{ github.event.inputs.hook_template }}"
