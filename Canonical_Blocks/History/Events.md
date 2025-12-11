@@ -1,5 +1,5 @@
 # Canonical Events
-[ example ⚠️ not cannon ]
+[ example ⚠️ not canon ]
 
 This is the master list of all specific, resolved incidents from the past. These are indisputable facts.
 
