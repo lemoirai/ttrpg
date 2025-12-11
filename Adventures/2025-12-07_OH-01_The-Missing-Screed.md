@@ -1,5 +1,5 @@
 # Adventure Log: OH-01: The Missing Screed
-[ example ⚠️ not cannon ]
+[ example ⚠️ not canon ]
 
 **Date:** 2025-12-07
 **DM:** Leah
