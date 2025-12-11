@@ -1,5 +1,5 @@
 # Banned Topics (Safety & Creative Limits)
-[ example ⚠️ not cannon ]
+[ example ⚠️ not canon ]
 
 These items are strictly off-limits for all DMs and players.
 
