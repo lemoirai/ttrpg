@@ -1,5 +1,5 @@
 # Canonical Rules (Structural Mechanics)
-[ example ⚠️ not cannon ]
+[ example ⚠️ not canon ]
 
 These are the established, ratified rules that govern the West Marches campaign structure.
 
