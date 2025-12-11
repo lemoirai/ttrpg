@@ -1,5 +1,5 @@
 # Canonical Eras
-[ example ⚠️ not cannon ]
+[ example ⚠️ not canon ]
 
 This is the master list of all established time periods in the Planescape West Marches campaign.
 
