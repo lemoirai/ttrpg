@@ -2,6 +2,11 @@
 
 Welcome to the **Planescape West Marches** campaign! This document serves as the single source of truth for our shared world, history, and structural rules, regardless of where this information is stored.
 
+### Resource links
+
+- [Everyday Reference - 5e.tools](https://5e.tools/)
+- [Markdown Reference - srd.wiki](https://srd.wiki/)
+
 ---
 
 ## <img src="png/book.png" alt="" width="50px"> Terms of Service (Table of Contents)
