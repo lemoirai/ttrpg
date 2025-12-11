@@ -1,5 +1,5 @@
 # Open Question/Hook: OH-02: The Mechanus Manor
-[ example ⚠️ not cannon ]
+[ example ⚠️ not canon ]
 
 **Question to be Resolved:** Has Factol Tethys abandoned their plan to re-write the Covenant, or is the manor on Mechanus now a headquarters for an attempted coup of the Harmonium?
 
