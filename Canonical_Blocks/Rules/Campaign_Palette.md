@@ -1,4 +1,5 @@
 # Campaign Palette (Tone & Constraints)
+[ example ⚠️ not cannon ]
 
 These rules define the desired style and acceptable content for the campaign. DMs must adhere to these constraints when creating adventures.
 
