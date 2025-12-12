@@ -99,17 +99,25 @@ This timeline will be updated continuously as adventures resolve **Open Question
 
 ```mermaid
 timeline
-    title Planescape West Marches Canonical History
+    title Planescape West Marches Canonical History
 
-    section The Distant Past (Bookend Start)
-    ERA 1: The First Faction War (A time of initial chaos as the factions formed.)
-        Canonical Event: [Placeholder: Key Treaty Signed]
-        Canonical Event: [Placeholder: Key Figure's Birth]
-    
-    section The Recent History of Sigil
-    ERA 2: The Silent Conflict (A tense period defined by espionage and cold war tactics.)
-        Canonical Event: [Placeholder: The Great Portal Sealing]
-        Canonical Event: The Secret Relocation (See Example Adventure Log.)
-
-    section The Present Day (Bookend End)
-    The Time of Active Exploration: The Campaign Begins
+    section The Distant Past (Bookend Start)
+    ERA The Culling (c. -502): A period of upheaval and faction reduction.
+        The Great Upheaval: Lady of Pain reduces Factions to 15.
+        The Four Doors: Temple of Doors sealed.
+    
+    section The Recent History of Sigil
+    ERA High Administration (1 - 126 AW): A long, relatively stable period of codified existence.
+        Unity of Rings: The Sigil Calendar is Ratified.
+        Planescape: Torment: The Nameless One's journey passes through Sigil.
+    
+    ERA The Faction War (127 - 130 AW): A brief, explosive conflict leading to massive change.
+        Hashkar's Death: Fraternity of Order Factol slain, sparking the war.
+        The Tempest of Doors: Lady of Pain ejects all Factions from Sigil.
+    
+    section The Present Day (Bookend End)
+    ERA Reconstruction (130 AW - Current): The current political climate defined by bureaucratic rule and faction infiltration.
+        Council of 99: A new bureaucracy takes over administration of Sigil.
+        The Secret Return: Factions infiltrate Sigil again, disguised as Guilds.
+        The Time of Active Exploration: The Campaign Begins - You Are Here.
+```
