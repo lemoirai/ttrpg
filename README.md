@@ -4,6 +4,18 @@
 
 Welcome to the **Planescape West Marches** campaign! This document serves as the single source of truth for our shared world, history, and structural rules, regardless of where this information is stored.
 
+```mermaid
+graph TD
+    A[A: START/END] --> B(B: REVIEW: Read Canon History);
+    B --> C(C: PLAN: Choose Mission/Target);
+    C --> D[D: PLAY: Execute 5e Episode ];
+    D --> E[E: SYNOPSIS: Commit Scene ];
+    E --> F{F: Check Impact?};
+    F --> |Ratification| G[G: CANON/RETCON ];
+    F --> |Proposal| B;
+    G --> B;
+```
+
 ### Resource links
 
 - [Everyday Reference - 5e.tools](https://5e.tools/)
