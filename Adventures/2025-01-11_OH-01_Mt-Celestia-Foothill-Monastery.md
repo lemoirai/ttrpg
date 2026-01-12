@@ -1,9 +1,9 @@
 # Adventure Log: OH-01: Mt. Celestia Foothill Monestary
 
 **Date:** 2026-1-11
-**DM:** Arial
-**Party:** Malak (Player X), Fennec (Player Y), K'lar (Player Z)
-**Original Hook (OH-01):** Who stole the Covenant Screed from the Guvners, and why?
+**DM:** Ariel
+**Party:** Mote, Aundria, Fyrn, Suspiira, Lash
+**Original Hook (OH-01):** 
 
 ---
 
