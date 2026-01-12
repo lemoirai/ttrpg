@@ -1,9 +1,9 @@
 # Adventure Log: OH-01: Mt. Celestia Foothill Monestary
 
-**Date:** 2026-1-11
-**DM:** Ariel
-**Party:** Mote, Aundria, Fyrn, Suspiira, Lash
-**Original Hook (OH-01):** 
+* **Date:** 2026-1-11
+* **DM:** Ariel
+* **Party:** Mote, Aundria, Fyrn, Suspiira, Lash
+* **Original Hook (OH-01):** 
 
 ---
 
