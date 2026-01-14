@@ -82,9 +82,6 @@
 * **Resources Secured:** Golden Tuning Fork, Order of the Planes Militant Journal.
 * **Treasure & Loot:**
 * +100 GP reward (each).
-* +90 GP from selling gear (each).
+* +400 GP from selling gear (80 each).
 * +55 GP found on-site (total).
 * **Items:** Short sword, general adventurer gear, **Symbols of Shar** (Steel medallions with dark crystal centers).
-
-
-* **Portal Status:** Key used: Unknown. Portal requires ritual to re-crack.
