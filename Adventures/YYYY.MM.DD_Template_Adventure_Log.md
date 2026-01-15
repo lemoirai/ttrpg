@@ -27,10 +27,10 @@
 ---
 
 ## **Important Findings**
-
+_Categories may vary based on events_
 * **Portal Status & History:** [Detail what was learned about the portal’s history, its previous users, and its current stability.]
 * **Intelligence & Lore:** [Note any recovered documents, logbooks, or verbal history that may be of value to the Guild.]
-* **Key/Artifact Malfunctions:** [Identify any portal keys or magical items found. Note if they are functional, damaged, or require further study.]
+* **Key/Artifact:** [Identify any portal keys or magical items found. Note if they are functional, damaged, or require further study.]
 * **Extra-Planar Influences:** [Note any signs of corruption, rifts, or interference from other planes (e.g., Shadowfell, Abyss, Mechanus) that were not expected.]
 
 ---
